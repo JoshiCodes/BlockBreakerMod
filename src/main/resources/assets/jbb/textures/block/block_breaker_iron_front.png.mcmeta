@@ -3,9 +3,14 @@
     "width": 16,
     "height": 16,
     "frames": [
-      0,
-      1
-    ],
-    "frametime": 20
+      {
+        "index": 0,
+        "time": 100
+      },
+      {
+        "index": 1,
+        "time": 20
+      }
+    ]
   }
 }
