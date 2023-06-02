@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "P": {
+      "item": "minecraft:stone_pickaxe"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SPS",
+    "SRS"
+  ],
+  "result": {
+    "count": 1,
+    "item": "jbb:block_breaker_stone"
+  }
+}

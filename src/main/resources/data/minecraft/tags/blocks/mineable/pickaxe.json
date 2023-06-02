@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "jbb:block_breaker_stone",
+    "jbb:block_breaker_iron",
+    "jbb:block_breaker_diamond",
+    "jbb:block_breaker_netherite"
+  ]
+}

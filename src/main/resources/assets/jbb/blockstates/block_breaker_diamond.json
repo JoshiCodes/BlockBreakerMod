@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "jbb:block/block_breaker_diamond"
+    },
+    "facing=east": {
+      "model": "jbb:block/block_breaker_diamond",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "jbb:block/block_breaker_diamond",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "jbb:block/block_breaker_diamond",
+      "y": 270
+    },
+
+    "facing=up": {
+      "model": "jbb:block/block_breaker_diamond",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "jbb:block/block_breaker_diamond",
+      "x": 90
+    }
+  }
+}
