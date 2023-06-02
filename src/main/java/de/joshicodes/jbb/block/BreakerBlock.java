@@ -5,6 +5,7 @@ import de.joshicodes.jbb.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -148,7 +149,19 @@ public class BreakerBlock extends Block implements EntityBlock {
                 return true;
             }
 
-            return state.getTags().anyMatch((t) -> t.equals(Tags.Blocks.STONE));
+            List<TagKey<?>> tags = new ArrayList<>();
+            tags.add(Tags.Blocks.STONE);
+            tags.add(Tags.Blocks.ORES);
+            tags.add(Tags.Blocks.SANDSTONE);
+            tags.add(Tags.Blocks.NETHERRACK);
+            tags.add(Tags.Blocks.END_STONES);
+            tags.add(Tags.Blocks.COBBLESTONE);
+            return state.getTags().anyMatch((t) -> {
+                for (TagKey<?> tag : tags) {
+                    if(t.equals(tag)) return true;
+                }
+                return false;
+            });
         }
     }
 
