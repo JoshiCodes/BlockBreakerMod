@@ -8,10 +8,17 @@ import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ObserverBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.ticks.ScheduledTick;
+import net.minecraft.world.ticks.TickPriority;
+
+import static de.joshicodes.jbb.block.BreakerBlock.POWERED;
 
 public class BreakerBlockEntity extends BlockEntity {
 
@@ -23,9 +30,15 @@ public class BreakerBlockEntity extends BlockEntity {
         super(entity, p_155229_, p_155230_);
     }
 
-    public void tick(BreakerBlock.BreakerType type) {
+    public void tick(Level level, BreakerBlock.BreakerType type) {
 
         if(level == null) return;
+
+        if(getBlockState().getValue(POWERED)) {
+            level.setBlock(getBlockPos(), getBlockState().setValue(POWERED, false), 2);
+            // update block behind
+            level.neighborChanged(getBlockPos().relative(getBlockState().getValue(BreakerBlock.FACING).getOpposite()), getBlockState().getBlock(), getBlockPos());
+        }
 
         BlockPos frontPos = getBlockPos().relative(getBlockState().getValue(BreakerBlock.FACING), 1);
 
@@ -61,12 +74,16 @@ public class BreakerBlockEntity extends BlockEntity {
         }
 
         breakProgress++;
-        level.destroyBlockProgress(frontPos.hashCode(), frontPos, breakProgress);
+        level.destroyBlockProgress(getBlockPos().hashCode(), frontPos, breakProgress);
 
         if(breakProgress >= 10) {
-            level.destroyBlockProgress(frontPos.hashCode(), frontPos, -1);
+            level.destroyBlockProgress(getBlockPos().hashCode(), frontPos, -1);
             level.destroyBlock(frontPos, true);
             breakProgress = 0;
+            BlockPos selfPos = getBlockPos();
+            level.setBlock(selfPos, getBlockState().setValue(POWERED, true), 2);
+            // update block behind
+            level.neighborChanged(getBlockPos().relative(getBlockState().getValue(BreakerBlock.FACING).getOpposite()), getBlockState().getBlock(), getBlockPos());
         }
 
     }
