@@ -16,7 +16,7 @@ The Blocks will drop just as if you had broken them with the pickaxe.
 <img alt="crafting.gif" src="https://github.com/JoshiCodes/BlockBreakerMod/blob/master/assets/crafting.gif?raw=true">
 
 ## Download
-You can download the latest release from the [Releases](https://github.com/JoshiCodes/BlockBreakerMod/releases) or from [CurseForge]().
+You can download the latest release from the [Releases](https://github.com/JoshiCodes/BlockBreakerMod/releases) or from [CurseForge](https://legacy.curseforge.com/minecraft/mc-mods/joshs-block-breaker/files).
 
 ## License
 This mod is licensed under the [MIT License](https://github.com/JoshiCodes/BlockBreakerMod/blob/master/LICENSE).
