@@ -5,7 +5,7 @@
     "down": "#all",
     "up": "#all",
     "north": "#front",
-    "south": "#all",
+    "south": "#back",
     "west": "#all",
     "east": "#all"
   }

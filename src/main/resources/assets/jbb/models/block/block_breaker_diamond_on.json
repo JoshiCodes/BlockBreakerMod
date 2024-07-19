@@ -3,6 +3,6 @@
   "textures": {
     "all": "jbb:block/block_breaker_diamond",
     "front": "jbb:block/block_breaker_diamond_front",
-    "back": "jbb:block/block_breaker_diamond_back"
+    "back": "jbb:block/block_breaker_diamond_back_on"
   }
 }

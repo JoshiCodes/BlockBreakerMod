@@ -1,27 +1,51 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,powered=false": {
       "model": "jbb:block/block_breaker_netherite"
     },
-    "facing=east": {
+    "facing=north,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
+      "y": 90
+    },
+    "facing=east,powered=false": {
       "model": "jbb:block/block_breaker_netherite",
       "y": 90
     },
-    "facing=south": {
+    "facing=east,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
+      "y": 270
+    },
+    "facing=south,powered=false": {
       "model": "jbb:block/block_breaker_netherite",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
+      "y": 180
+    },
+    "facing=west,powered=false": {
       "model": "jbb:block/block_breaker_netherite",
       "y": 270
     },
+    "facing=west,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
+      "y": 90
+    },
 
-    "facing=up": {
+    "facing=up,powered=false": {
       "model": "jbb:block/block_breaker_netherite",
       "x": 270
     },
-    "facing=down": {
+    "facing=up,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
+      "x": 270
+    },
+    "facing=down,powered=false": {
       "model": "jbb:block/block_breaker_netherite",
+      "x": 90
+    },
+    "facing=down,powered=true": {
+      "model": "jbb:block/block_breaker_netherite_on",
       "x": 90
     }
   }

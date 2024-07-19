@@ -3,6 +3,6 @@
   "textures": {
     "all": "jbb:block/block_breaker_netherite",
     "front": "jbb:block/block_breaker_netherite_front",
-    "back": "jbb:block/block_breaker_netherite_back"
+    "back": "jbb:block/block_breaker_netherite_back_on"
   }
 }
